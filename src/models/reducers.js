@@ -5,7 +5,7 @@ import { increaseCount } from './'
 const count = (count = 0, action) => {
   switch(action.type) {
     case increaseCount.type:
-      return count++;
+      return count+1;
     default:
       return count;
   }

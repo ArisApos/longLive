@@ -2,16 +2,16 @@ import React from 'react'
 import { connect } from 'react-redux';
 import { increaseCount } from '../models'
 
-const Home = ({ count, onClick }) => (
+const Home = ({ count, onHomeClick }) => (
   <div>
-    <h1 onClick={ onClick }>Homepage: { count } </h1>
+    <h1 onClick={ onHomeClick }>Homepage: { count } </h1>
   </div>
 );
 
 const stateHome = ({ count }) => ({ count });
 
 const dispatchHome = dispatch => ({
-  onClick: () => {
+  onHomeClick: () => {
     dispatch(increaseCount());
   },
 });
