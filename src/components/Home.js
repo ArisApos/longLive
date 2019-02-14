@@ -1,21 +1,37 @@
 import React from 'react'
 import { connect } from 'react-redux';
 import { increaseCount } from '../models'
-import Search from './Search'
+import { Search, Product } from './'
 
-const Home = ({ count, onHomeClick }) => (
+const Home = ({ searchedProducts }) => (
   <div>
     <Search />
-    <h1 onClick={ onHomeClick }>Homepage: { count } </h1>
+    <h1>Products: </h1>
+    <ul className="productList">{ listItems(searchedProducts) }</ul>
   </div>
 );
 
-const stateHome = ({ count }) => ({ count });
+const listItems = products => (
+  products.map(
+    (product, i) => (
+      <li key={ i }>
+        <Product
+          name={ product.name }
+          type={ product.type }
+          price={ product.type }
+          imageSrc={ product.imageSrc }
+        />
+      </li>
+    )
+  )
+)
 
-const dispatchHome = dispatch => ({
-  onHomeClick: () => {
-    dispatch(increaseCount());
-  },
-});
+const stateHome = ({ searchedProducts }) => ({ searchedProducts });
+//
+// const dispatchHome = dispatch => ({
+//   onHomeClick: () => {
+//     dispatch(increaseCount());
+//   },
+// });
 
-export default connect(stateHome, dispatchHome)(Home);
+export default connect(stateHome,)(Home);

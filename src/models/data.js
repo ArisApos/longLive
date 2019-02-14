@@ -1,4 +1,4 @@
-export const products = [
+const products = [
   {
     name: "Sector 9 Fire-Water" ,
     type: "Downhill",
@@ -72,3 +72,5 @@ export const products = [
     imageSrc: "/images/pintail1.png"
   }
 ];
+
+export default products;

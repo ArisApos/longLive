@@ -1,10 +1,11 @@
 import { increaseCount, hasMatched } from './actions'
-import { rootReducer } from './reducers'
-import { products } from './data'
+import { count, searchedProducts } from './reducers'
+import products from './data'
 
 export {
   increaseCount,
   hasMatched,
-  rootReducer,
-  products
+  products,
+  count,
+  searchedProducts
 }
