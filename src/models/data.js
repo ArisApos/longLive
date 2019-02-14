@@ -1,4 +1,6 @@
-const products = [
+import _ from 'lodash'
+
+const data = [
   {
     name: "Sector 9 Fire-Water" ,
     type: "Downhill",
@@ -18,7 +20,7 @@ const products = [
     imageSrc: "/images/downhill3.png"
   },
   {
-    name: "Arbor Bob Marley",
+    name: "Arbor Rasta Love",
     type: "Downhill",
     price: "170",
     imageSrc: "/images/downhill4.png"
@@ -48,7 +50,7 @@ const products = [
     imageSrc: "/images/fishtail4.png"
   },
   {
-    name: "Sector 9 Cali",
+    name: "Sector 9 California Love",
     type: "Pintail",
     price: "180",
     imageSrc: "/images/pintail1.png"
@@ -73,4 +75,5 @@ const products = [
   }
 ];
 
+const products = _.shuffle(data);
 export default products;

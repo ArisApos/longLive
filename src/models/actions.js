@@ -1,3 +1,3 @@
 import { Action } from '../libs';
 
-export const hasMatched = Action('HAS_MATCHED');
+export const enterPressed = Action('ENTER_PRESSED');

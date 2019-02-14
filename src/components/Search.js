@@ -1,10 +1,10 @@
 import React from 'react'
-import { products, hasMatched } from '../models'
+import { products, enterPressed } from '../models'
 import { connect } from 'react-redux';
 
-const Search = ({ onEnterClick }) => (
+const Search = ({ onEnterClick, onEmptyClick }) => (
   <div className="centerSearch">
-    <input type="text" placeholder="Search..." className="searchBar" onKeyUp={(e)=>{handleKeyUp(onEnterClick,e)}}/>
+    <input type="text" placeholder="Search..." className="searchBar" onKeyUp={(e)=>{handleEnterClick(onEnterClick, e)}}/>
   </div>
 );
 
@@ -16,18 +16,29 @@ const searchableProducts = products.map(
   }
 );
 
-const handleKeyUp = (onEnterClick, event) => {
-  const searchInput = event.target.value.toLowerCase();
-  const filtered = products.filter(
-    (product, i) => (
-      searchableProducts[i].find(key => key === searchInput)
-    ));
-    event.key === "Enter" && onEnterClick(filtered);
-}
+const handleEnterClick = (onEnterClick, event) => {
+  if (event.key === "Enter") {
+    const searchInput = event.target.value.toLowerCase();
+    if (!event.target.value.length){
+      onEnterClick(products);
+      return;
+    } else {
+      console.log(searchInput)
+      console.log(searchInput + " ")
+      const filtered = products.filter(
+        (product, i) => (
+          searchableProducts[i].find(key => {
+            return key === searchInput || key + " " === searchInput
+          })
+        ));
+        onEnterClick(filtered);
+    }
+  };
+};
 
   const dispatchSearch = dispatch => ({
       onEnterClick: (filtered) => {
-      dispatch(hasMatched(filtered));
+      dispatch(enterPressed(filtered));
     },
   });
 
