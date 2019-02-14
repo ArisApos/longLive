@@ -4,7 +4,7 @@ import App from './App';
 import { createStore } from 'redux';
 import { combineReducers } from 'redux';
 import { Provider } from 'react-redux';
-import './index.css';
+import './styles/styles.css';
 import { count, searchedProducts } from './models'
 
 const rootReducer = combineReducers({ count, searchedProducts });

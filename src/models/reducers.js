@@ -10,7 +10,7 @@ export const count = (count = 0, action) => {
   }
 };
 
-export const searchedProducts = (searchedProducts = [products[0], products[1], products[2]], action) => {
+export const searchedProducts = (searchedProducts = products, action) => {
   switch(action.type){
     case hasMatched.type:
       return searchedProducts;

@@ -14,11 +14,11 @@ const Home = ({ searchedProducts }) => (
 const listItems = products => (
   products.map(
     (product, i) => (
-      <li key={ i }>
+      <li key={ i } className="product">
         <Product
           name={ product.name }
           type={ product.type }
-          price={ product.type }
+          price={ product.price }
           imageSrc={ product.imageSrc }
         />
       </li>

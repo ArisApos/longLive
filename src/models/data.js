@@ -21,7 +21,7 @@ const products = [
     name: "Arbor Bob Marley",
     type: "Downhill",
     price: "180",
-    imageSrc: "/images/downhill3.png"
+    imageSrc: "/images/downhill4.png"
   },
   {
     name: "Sector 9 EyeBall",
@@ -57,19 +57,19 @@ const products = [
     name: "Sector 9 Bob Marley",
     type: "Pintail",
     price: "180",
-    imageSrc: "/images/pintail1.png"
+    imageSrc: "/images/pintail2.png"
   },
   {
     name: "Roxy Fujifilm Instax",
     type: "Pintail",
     price: "180",
-    imageSrc: "/images/pintail1.png"
+    imageSrc: "/images/pintail3.png"
   },
   {
     name: "Arbor Oceanology",
     type: "Pintail",
     price: "180",
-    imageSrc: "/images/pintail1.png"
+    imageSrc: "/images/pintail4.png"
   }
 ];
 
