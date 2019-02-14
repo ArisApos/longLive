@@ -2,7 +2,7 @@ import React from 'react'
 //import { connect } from 'react-redux';
 
 const Search = () => (
-  <div className="center">
+  <div className="centerSearch">
     <input type="text" placeholder="Search..." className="searchBar"/>
   </div>
 );
