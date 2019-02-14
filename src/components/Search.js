@@ -2,8 +2,8 @@ import React from 'react'
 //import { connect } from 'react-redux';
 
 const Search = () => (
-  <div>
-    <input type="text" placeholder="Search..." />
+  <div className="center">
+    <input type="text" placeholder="Search..." className="searchBar"/>
   </div>
 );
 

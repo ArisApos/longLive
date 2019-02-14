@@ -10,11 +10,14 @@
 }
 
 .center {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
+  display: flex;
+  justify-content: center;
 }
 
 .center-text {
   text-align: center;
+}
+
+.searchBar {
+  padding: 8px 28px 8px;
 }
