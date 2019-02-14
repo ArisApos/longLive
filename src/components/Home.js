@@ -1,6 +1,5 @@
 import React from 'react'
 import { connect } from 'react-redux';
-import { increaseCount } from '../models'
 import { Search, Product } from './'
 
 const Home = ({ searchedProducts }) => (
