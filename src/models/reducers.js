@@ -12,9 +12,18 @@ export const count = (count = 0, action) => {
 
 export const searchedProducts = (searchedProducts = products, action) => {
   switch(action.type){
-    case hasMatched.type:
-      return searchedProducts;
+    // case hasMatched.type:
+    //   return searchedProducts;
     default:
       return searchedProducts;
+  }
+}
+
+export const searchedItems = (searchedItems = [], action) => {
+  switch(action.type){
+    case hasMatched.type:
+      return [...searchedItems, action.payload];
+    default:
+      return searchedItems;
   }
 }
