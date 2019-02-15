@@ -2,74 +2,86 @@ import _ from 'lodash'
 
 const data = [
   {
-    name: "Sector 9 Fire-Water" ,
+    name: "Fire-Water" ,
     type: "Downhill",
+    brand: "Sector 9",
     price: "180",
     imageSrc: "/images/downhill1.png"
   },
   {
-    name: "Sector 9 Wavey Sunset",
+    name: "Wavey Sunset",
     type: "Downhill",
+    brand: "Sector 9",
     price: "170",
     imageSrc: "/images/downhill2.png"
   },
   {
-    name: "Arbor Nelly's",
+    name: "Nelly's",
     type: "Downhill",
+    brand: "Arbor",
     price: "220",
     imageSrc: "/images/downhill3.png"
   },
   {
-    name: "Arbor Rasta Love",
+    name: "Rasta Love",
     type: "Downhill",
+    brand: "Arbor",
     price: "170",
     imageSrc: "/images/downhill4.png"
   },
   {
-    name: "Sector 9 EyeBall",
+    name: "EyeBall",
     type: "Fishtail",
+    brand: "Sector 9",
     price: "160",
     imageSrc: "/images/fishtail1.png"
   },
   {
-    name: "Naked Lollipop",
+    name: "Lollipop",
     type: "Fishtail",
+    brand: "Naked",
     price: "130",
     imageSrc: "/images/fishtail2.png"
   },
   {
-    name: "Sector 9 Mandala",
+    name: "Mandala",
     type: "Fishtail",
+    brand: "Sector 9",
     price: "150",
     imageSrc: "/images/fishtail3.png"
   },
   {
-    name: "Madrid Fish and Crabs",
+    name: "Fish and Crabs",
     type: "Fishtail",
+    brand: "Madrid",
     price: "160",
     imageSrc: "/images/fishtail4.png"
   },
   {
-    name: "Sector 9 California Love",
+    name: "California Love",
     type: "Pintail",
+    brand: "Sector 9",
     price: "180",
     imageSrc: "/images/pintail1.png"
   },
   {
-    name: "Sector 9 Bob Marley",
+    name: "Bob Marley",
     type: "Pintail",
+    brand: "Sector 9",
     price: "170",
     imageSrc: "/images/pintail2.png"
   },
   {
-    name: "Roxy Fujifilm Instax",
+    name: "Fujifilm Instax",
     type: "Pintail",
+    brand: "Roxy",
     price: "160",
     imageSrc: "/images/pintail3.png"
   },
   {
-    name: "Arbor Oceanology",
+    name: "Oceanology",
     type: "Pintail",
+    brand: "Arbor",
     price: "230",
     imageSrc: "/images/pintail4.png"
   }

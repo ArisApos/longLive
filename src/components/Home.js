@@ -13,19 +13,20 @@ const Home = ({ searchedProducts }) => (
 
 const listItems = products => (
   products.map(
-    ({ name, type, price, imageSrc }, i) => (
+    ({ name, type, brand, price, imageSrc }, i) => (
       <li key={ i } className="product">
         <Product
           name={ name }
           type={ type }
+          brand={ brand }
           price={ price }
           imageSrc={ imageSrc }
         />
       </li>
     )
   )
-)
+);
 
 const stateHome = ({ searchedProducts }) => ({ searchedProducts });
 
-export default connect(stateHome,)(Home);
+export default connect(stateHome, null)(Home);

@@ -9,9 +9,10 @@ const Search = ({ onEnterClick, onEmptyClick }) => (
 );
 
 const searchableProducts = products.map(
-  ({ name, type }) => {
+  ({ name, type, brand }) => {
     const itemArray = name.toLowerCase().split(/[\s-]+/);
     itemArray.push(type.toLowerCase());
+    itemArray.push(brand.toLowerCase());
     return itemArray;
   }
 );
