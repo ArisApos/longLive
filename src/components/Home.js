@@ -4,8 +4,9 @@ import { Search, Product } from './'
 
 const Home = ({ searchedProducts }) => (
   <div>
+    <img src="../images/illuminatilogo.png" className="logo"/>
     <Search />
-    <h1>Products: </h1>
+    <h1 className="heading">Products: </h1>
     <ul className="productList">{ listItems(searchedProducts) }</ul>
   </div>
 );
