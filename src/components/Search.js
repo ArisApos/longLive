@@ -1,10 +1,10 @@
 import React from 'react'
-import { products, enterPressed } from '../models'
 import { connect } from 'react-redux';
+import { products, enterPressed } from '../models'
 
 const Search = ({ onEnterClick, onEmptyClick }) => (
   <div className="centerSearch">
-    <input type="text" placeholder="Search..." className="searchBar" onKeyUp={(e)=>{handleEnterClick(onEnterClick, e)}}/>
+    <input type="text" placeholder="Search..." className="searchBar" onKeyUp={ (e) => handleEnterClick(onEnterClick, e) }/>
   </div>
 );
 
@@ -19,7 +19,7 @@ const searchableProducts = products.map(
 const handleEnterClick = (onEnterClick, event) => {
   if (event.key === "Enter") {
     const searchInput = event.target.value.toLowerCase();
-    if (!event.target.value.length){
+    if (!event.target.value.length) {
       onEnterClick(products);
       return;
     } else {
@@ -33,9 +33,7 @@ const handleEnterClick = (onEnterClick, event) => {
 };
 
   const dispatchSearch = dispatch => ({
-      onEnterClick: (filtered) => {
-      dispatch(enterPressed(filtered));
-    },
+      onEnterClick: filtered => dispatch(enterPressed(filtered)),
   });
 
 export default connect(undefined, dispatchSearch)(Search);
