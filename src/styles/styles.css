@@ -6,7 +6,7 @@
 }
 
 .product {
-  width: 45%;
+  width: 26%;
 }
 
 .center {
@@ -15,7 +15,7 @@
   margin-right: auto;
 }
 
-.center-text {
+.centerText {
   text-align: center;
 }
 
@@ -25,5 +25,6 @@
 }
 
 .searchBar {
+  margin-top: 20px;
   padding: 8px 28px 8px;
 }

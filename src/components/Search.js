@@ -23,13 +23,9 @@ const handleEnterClick = (onEnterClick, event) => {
       onEnterClick(products);
       return;
     } else {
-      console.log(searchInput)
-      console.log(searchInput + " ")
       const filtered = products.filter(
         (product, i) => (
-          searchableProducts[i].find(key => {
-            return key === searchInput || key + " " === searchInput
-          })
+          searchableProducts[i].find(key => key === searchInput || key + " " === searchInput || key.includes(searchInput))
         ));
         onEnterClick(filtered);
     }

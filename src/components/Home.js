@@ -12,7 +12,7 @@ const Home = ({ searchedProducts }) => (
 
 const listItems = products => (
   products.map(
-    ({name, type, price, imageSrc}, i) => (
+    ({ name, type, price, imageSrc }, i) => (
       <li key={ i } className="product">
         <Product
           name={ name }
@@ -26,11 +26,5 @@ const listItems = products => (
 )
 
 const stateHome = ({ searchedProducts }) => ({ searchedProducts });
-//
-// const dispatchHome = dispatch => ({
-//   onHomeClick: () => {
-//     dispatch(increaseCount());
-//   },
-// });
 
 export default connect(stateHome,)(Home);
