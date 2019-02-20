@@ -9,20 +9,11 @@ export const searchedProducts = (searchedProducts = products, action) => {
   }
 };
 
-export const fastProducts = (fastProducts = ['zero','haha'], action) => {
+export const fastProducts = (fastProducts = [], action) => {
   switch (action.type) {
     case onKeyUp.type:
       return action.payload;
     default:
       return fastProducts;
-  }
-};
-
-export const noProductsFound = (noProductsFound = false, action) => {
-  switch(action.type) {
-     case notFound.type:
-       return noProductsFound = true;
-    default:
-      return noProductsFound;
   }
 };

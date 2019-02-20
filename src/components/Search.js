@@ -44,15 +44,8 @@ const handleInput = (onEnterClick, onNullEnter, onKeyUpD, event) => {
             return searchInput.find(inputWord => inputWord === key) || key.includes(searchInput)
           })
         ));
-      console.log(filtered)
       onKeyUpD(filtered)
-      if (event.key === "Enter") {
-        if (!filtered.length) {
-          onNullEnter()
-        } else {
-          onEnterClick(filtered);
-      }
-    }
+    if (event.key === "Enter") onEnterClick(filtered)
   }
 };
 
