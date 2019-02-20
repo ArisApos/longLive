@@ -1,5 +1,5 @@
-import { enterPressed, onKeyUp } from './actions'
-import { searchedProducts, fastProducts } from './reducers'
+import { enterPressed, onKeyUp, notFound } from './actions'
+import { searchedProducts, fastProducts, noProductsFound } from './reducers'
 import products from './data'
 
 export {
@@ -7,5 +7,7 @@ export {
   onKeyUp,
   products,
   searchedProducts,
+  noProductsFound,
+  notFound,
   fastProducts
 }
