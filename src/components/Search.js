@@ -10,7 +10,7 @@ return (
       type="text"
       placeholder="Search..."
       className="searchBar"
-      onKeyUp={e => handleInput(onEnterClick, onKeyUpD, e)}
+      onKeyUp={e => handleInput(onEnterClick, onKeyUpD,e)}
     />
     {fastProducts.map(({ name, type, brand }) => (
       <div className="searching-result">
