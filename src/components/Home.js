@@ -11,8 +11,7 @@ const Home = ({ searchedProducts }) => (
   </div>
 );
 
-const listItems = products => (
-  products.map(
+const listItems = products => products.length === 0 ? <div>Sorry nothing was found in our super duper shop</div> : products.map(
     ({ name, type, brand, price, imageSrc }, i) => (
       <li key={ i } className="product">
         <Product
@@ -24,8 +23,9 @@ const listItems = products => (
         />
       </li>
     )
-  )
+  
 );
+
 
 const stateHome = ({ searchedProducts }) => ({ searchedProducts });
 

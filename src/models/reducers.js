@@ -1,4 +1,4 @@
-import { enterPressed } from './'
+import { enterPressed, onKeyUp } from './'
 import { products } from './'
 
 export const searchedProducts = (searchedProducts = products, action) => {
@@ -9,3 +9,13 @@ export const searchedProducts = (searchedProducts = products, action) => {
       return searchedProducts;
   }
 }
+export const fastProducts = (fastProducts = ['zero','haha'], action) => {
+  switch (action.type) {
+    case onKeyUp.type:
+      return action.payload;
+    default:
+      return fastProducts;
+  }
+}
+
+
