@@ -1,7 +1,7 @@
 import React from 'react'
 
 const Product = ({ name, type, brand, price, imageSrc }) => (
-  <div className="centerText">
+  <div className="center-text">
     <h2>{ name }</h2>
     <img src={ imageSrc } height="250" width="170" className="center"/>
     <h4>Brand: { brand }</h4>

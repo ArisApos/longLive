@@ -6,9 +6,13 @@ const Home = ({ searchedProducts }) => (
   <div>
     <img src="../images/logo.png" className="logo"/>
     <Search />
-    <FilterMenu />
-    <h1 className="heading">Products: </h1>
-    <ul className="productList">{ listItems(searchedProducts) }</ul>
+    <div className="collection">
+      <FilterMenu />
+      <h1 className="heading">Products: </h1>
+      <div className="product-container">
+        <ul className="product-list">{ listItems(searchedProducts) }</ul>
+      </div>
+    </div>
   </div>
 );
 
@@ -27,6 +31,6 @@ const listItems = products => products.length === 0 ? <div>Sorry nothing was fou
 
 );
 
-const stateHome = ({ searchedProducts, noProductsFound }) => ({ searchedProducts, noProductsFound });
+const stateHome = ({ searchedProducts }) => ({ searchedProducts });
 
 export default connect(stateHome, null)(Home);

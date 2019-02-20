@@ -10,10 +10,10 @@ export const searchedProducts = (searchedProducts = products, action) => {
 };
 
 export const suggestedProductsAndInput = (suggestedProductsAndInput = {suggestedProducts:[],input:[]}, action) => {
-         switch (action.type) {
-           case onKeyUp.type:
-             return action.payload;
-           default:
-             return suggestedProductsAndInput;
-         }
-       };
+  switch (action.type) {
+    case onKeyUp.type:
+      return action.payload;
+    default:
+      return suggestedProductsAndInput;
+    }
+};

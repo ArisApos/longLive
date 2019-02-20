@@ -1,8 +1,8 @@
 import React from 'react'
 
-const FilterMenu = ({ noProductsFound }) => (
-  <div className="sidemenu">
-    <label>SHOP:</label>
+const FilterMenu = () => (
+  <div className="side-menu">
+    <h4 className="side-menu--title">SHOP:</h4>
 
     <p>BY BRAND</p>
     <select>
@@ -23,7 +23,6 @@ const FilterMenu = ({ noProductsFound }) => (
     </select>
 
     <p>BY PRICE</p>
-    {noProductsFound && <h1>No Products Found</h1>}
   </div>
 );
 

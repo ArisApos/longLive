@@ -5,11 +5,11 @@ import { products, enterPressed, onKeyUp } from "../models";
 
 const Search = ({ onEnterClick, suggestedProducts, input, onKeyUpD }) => {
   return (
-    <div className="centerSearch">
+    <div className="center-search">
       <input
         type="text"
         placeholder="Search..."
-        className="searchBar"
+        className="search-bar"
         onKeyUp={e => handleInput(onEnterClick, onKeyUpD, e)}
       />
       { suggestedProducts.map(({ name, type, brand },i) => (
@@ -18,7 +18,7 @@ const Search = ({ onEnterClick, suggestedProducts, input, onKeyUpD }) => {
           {` ${type}`}
           {` ${brand}`}
         </div>
-      ))} 
+      ))}
     </div>
   );
 };
