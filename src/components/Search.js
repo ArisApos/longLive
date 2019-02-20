@@ -14,7 +14,7 @@ return (
     />
     {fastProducts.map(({ name, type, brand }) => (
       <div className="searching-result">
-        <b>  name:</b>
+        <b>  name: </b>
         {name}
         <b>  type:</b>
         {type}
