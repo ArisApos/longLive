@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { Search, Product, FilterMenu } from './'
 
 const Home = ({ searchedProducts }) => (
-  <div>
+  <div className="body-content">
     <img src="../images/logo.png" className="logo"/>
     <Search />
     <div className="collection">

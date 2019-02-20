@@ -31,13 +31,17 @@ flex-direction: column;
   font-size:16px;
 }
 
+.body-content {
+  font-family: fantasy;
+}
+
 .collection {
   padding: 30px 40px;
   display: flex;
 }
 
 .heading {
-  margin-left: 3%;
+  margin-left: 1%;
 }
 
 .side-menu {
@@ -65,7 +69,8 @@ flex-direction: column;
 }
 
 .product-container {
-  min-width: 57%;
+  min-width: 92%;
+  margin-left: -222px;
 }
 
 .product-list {
@@ -74,6 +79,7 @@ flex-direction: column;
   justify-content: center;
   list-style: none;
   padding: 0;
+  margin-right: 132px;
 }
 
 .product {
