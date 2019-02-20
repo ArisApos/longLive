@@ -6,20 +6,7 @@ const Home = ({ searchedProducts, noProductsFound }) => (
   <div>
     <img src="../images/logo.png" className="logo"/>
     <Search />
-    <div className="sideMenu">
-      <h3>SHOP</h3>
-      <p>BY BRAND</p>
-      <select>
-        <option>Sector 9</option>
-        <option>Arbor</option>
-        <option>Roxy</option>
-        <option>Madrid</option>
-        <option>Naked</option>
-      </select>
-      <p>BY STYLE</p>
-      <p>BY PRICE</p>
-    </div>
-    {noProductsFound && <h1>No Products Found</h1>}
+    <div className="sideMenu"> { filterMenu() } </div> {noProductsFound && <h1>No Products Found</h1>}
     <h1 className="heading">Products: </h1>
     <ul className="productList">{ listItems(searchedProducts) }</ul>
   </div>
@@ -39,6 +26,22 @@ const listItems = products => products.length === 0 ? <div>Sorry nothing was fou
     )
 
 );
+
+const filterMenu = () => (
+  <div>
+    <h3>SHOP</h3>
+    <p>BY BRAND</p>
+    <select>
+      <option>Sector 9</option>
+      <option>Arbor</option>
+      <option>Roxy</option>
+      <option>Madrid</option>
+      <option>Naked</option>
+    </select>
+    <p>BY STYLE</p>
+    <p>BY PRICE</p>
+  </div>
+)
 
 const stateHome = ({ searchedProducts, noProductsFound }) => ({ searchedProducts, noProductsFound });
 
