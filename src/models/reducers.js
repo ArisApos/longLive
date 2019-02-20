@@ -9,11 +9,11 @@ export const searchedProducts = (searchedProducts = products, action) => {
   }
 };
 
-export const fastProducts = (fastProducts = [], action) => {
-  switch (action.type) {
-    case onKeyUp.type:
-      return action.payload;
-    default:
-      return fastProducts;
-  }
-};
+export const suggestedProducts = (suggestedProducts = [], action) => {
+         switch (action.type) {
+           case onKeyUp.type:
+             return action.payload;
+           default:
+             return suggestedProducts;
+         }
+       };

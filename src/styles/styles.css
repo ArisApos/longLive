@@ -67,28 +67,23 @@ flex-direction: column;
 
 .searchBar {
   margin-top: 1.5%;
-  padding: 10px 0 10px 90px;
+  padding: 8px 70px 8px 20px;
   border: 2px solid #0069ff;
   border-radius: 5px;
-  background: #ffe8e8;
+  background: #d3eafd;
   color: #4767e1;
   transition:1s;
   width:250px;
   font-size:16px;
 }
-.centerSearch:focus-within .searchBar {
-  width:500px;
 
-}
 .searching-result {
   width:250px;
-  padding-left: 90px;
+  padding-left: 20px;
+  padding-right: 70px;
   background-color: #ddeafc;
-  color: #ef4c4c;
+  color: #6e789e;
   transition: 1s;
-}
-.centerSearch:focus-within .searching-result {
-  width: 500px;
 }
 
 .heading {
