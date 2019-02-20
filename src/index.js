@@ -5,9 +5,9 @@ import { createStore } from 'redux';
 import { combineReducers } from 'redux';
 import { Provider } from 'react-redux';
 import './styles/styles.css';
-import { searchedProducts, suggestedProducts } from './models'
+import { searchedProducts, suggestedProductsAndInput } from './models'
 
-const rootReducer = combineReducers({ searchedProducts, suggestedProducts });
+const rootReducer = combineReducers({ searchedProducts, suggestedProductsAndInput });
 
 const store = createStore(rootReducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
 

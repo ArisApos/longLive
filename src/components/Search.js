@@ -1,23 +1,24 @@
 import React from "react";
 import { connect } from "react-redux";
-import { products, enterPressed, onKeyUp, notFound } from "../models";
+import { products, enterPressed, onKeyUp } from "../models";
 
-const Search = ({ onEnterClick, suggestedProducts, onKeyUpD, onNullEnter }) => {
+
+const Search = ({ onEnterClick, suggestedProducts, input, onKeyUpD }) => {
   return (
     <div className="centerSearch">
       <input
         type="text"
         placeholder="Search..."
         className="searchBar"
-        onKeyUp={e => handleInput(onEnterClick, onNullEnter, onKeyUpD, e)}
+        onKeyUp={e => handleInput(onEnterClick, onKeyUpD, e)}
       />
-      {suggestedProducts.map(({ name, type, brand }) => (
-        <div className="searching-result">
+      { suggestedProducts.map(({ name, type, brand },i) => (
+        <div key={i} className="searching-result">
           {` ${name}`}
           {` ${type}`}
           {` ${brand}`}
         </div>
-      ))}
+      ))} 
     </div>
   );
 };
@@ -29,10 +30,11 @@ const searchableProducts = products.map(({ name, type, brand }) => {
   return productKeys;
 });
 
-const handleInput = (onEnterClick, onNullEnter, onKeyUpD, event) => {
+const handleInput = (onEnterClick, onKeyUpD, event) => {
   const searchInput = event.target.value.toLowerCase().split(" ");
   if (!event.target.value.length) {
     onEnterClick(products);
+    onKeyUpD({ suggestedProducts: [], input: [] });
     return;
   } else {
     const filtered = products.filter((product, i) =>
@@ -43,17 +45,20 @@ const handleInput = (onEnterClick, onNullEnter, onKeyUpD, event) => {
         );
       })
     );
-    onKeyUpD(filtered);
+    console.log(searchInput, filtered)
+    onKeyUpD({suggestedProducts:filtered,input:searchInput});
     if (event.key === "Enter") onEnterClick(filtered);
   }
 };
 
-const stateSearch = ({ suggestedProducts }) => ({ suggestedProducts });
+const stateSearch = ({ suggestedProductsAndInput }) => ({
+  suggestedProducts:suggestedProductsAndInput.suggestedProducts,
+  input:suggestedProductsAndInput.input
+});
 
 const dispatchSearch = dispatch => ({
   onEnterClick: filtered => dispatch(enterPressed(filtered)),
-  onKeyUpD: filtered => dispatch(onKeyUp(filtered)),
-  onNullEnter: () => dispatch(notFound())
+  onKeyUpD: (filteredAndInput) => dispatch(onKeyUp(filteredAndInput)),
 });
 
 export default connect(
