@@ -2,10 +2,11 @@ import React from 'react'
 
 const FilterMenu = ({ noProductsFound }) => (
   <div className="sidemenu">
-    <h3>SHOP</h3>
+    <label>SHOP:</label>
 
     <p>BY BRAND</p>
     <select>
+      <option value="">--Choose a brand--</option>
       <option>Sector 9</option>
       <option>Arbor</option>
       <option>Roxy</option>
@@ -15,6 +16,7 @@ const FilterMenu = ({ noProductsFound }) => (
 
     <p>BY STYLE</p>
     <select>
+      <option value="">--Choose a style--</option>
       <option>Downhill</option>
       <option>Pintail</option>
       <option>FishTail</option>

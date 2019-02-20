@@ -33,23 +33,23 @@ const searchableProducts = products.map(
 );
 
 const handleInput = (onEnterClick, onNullEnter, onKeyUpD, event) => {
-  if (event.key === "Enter") {
-    const searchInput = event.target.value.toLowerCase().split(' ');
-    if (!event.target.value.length) {
-      onEnterClick(products);
-      return;
-      } else {
-          const filtered = products.filter(
-            (product, i) => (
-              searchableProducts[i].find(key => {
-                return searchInput.find(inputWord => inputWord === key) || key.includes(searchInput)
-              })
-            ));
-          console.log(filtered)
-          onKeyUpD(filtered)
-      if (!filtered.length) {
-        onNullEnter()
-      } else {
+  const searchInput = event.target.value.toLowerCase().split(' ');
+  if (!event.target.value.length) {
+    onEnterClick(products);
+    return;
+  } else {
+      const filtered = products.filter(
+        (product, i) => (
+          searchableProducts[i].find(key => {
+            return searchInput.find(inputWord => inputWord === key) || key.includes(searchInput)
+          })
+        ));
+      console.log(filtered)
+      onKeyUpD(filtered)
+      if (event.key === "Enter") {
+        if (!filtered.length) {
+          onNullEnter()
+        } else {
           onEnterClick(filtered);
       }
     }
