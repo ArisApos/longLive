@@ -45,15 +45,14 @@ const handleInput = (onEnterClick, onKeyUpD, event) => {
         );
       })
     );
-    console.log(searchInput, filtered)
-    onKeyUpD({suggestedProducts:filtered,input:searchInput});
+    onKeyUpD({ suggestedProducts: filtered, input: searchInput} );
     if (event.key === "Enter") onEnterClick(filtered);
   }
 };
 
 const stateSearch = ({ suggestedProductsAndInput }) => ({
-  suggestedProducts:suggestedProductsAndInput.suggestedProducts,
-  input:suggestedProductsAndInput.input
+  suggestedProducts: suggestedProductsAndInput.suggestedProducts,
+  input: suggestedProductsAndInput.input
 });
 
 const dispatchSearch = dispatch => ({

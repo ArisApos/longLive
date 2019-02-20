@@ -53,8 +53,7 @@ flex-direction: column;
 
 .side-menu--title {
   padding: 5px 2px;
-  border-bottom: 2px solid;
-  border-bottom-color: #ddd;
+  border-bottom: 2px solid #ddd;
 }
 
 .selectCheckbox option::before {
@@ -79,7 +78,7 @@ flex-direction: column;
   justify-content: center;
   list-style: none;
   padding: 0;
-  margin-right: 132px;
+  margin: 92px 132px 0 0;
 }
 
 .product {
