@@ -7,14 +7,14 @@ const FilterMenu = ({ searchedProducts, onSelectOption }) => (
     <h4 className="side-menu--title">SHOP:</h4>
 
     <p>BY BRAND</p>
-    <select onChange={ (e) => { filterBrands(searchedProducts, onSelectOption, e) } }>
-    <option value=" ">--Choose a brand--</option>
+    <select onChange={ (e) => { filterMenu(searchedProducts, onSelectOption, e) } }>
+    <option value="brands">--Choose a brand--</option>
       { brands.map(brand => <option value={ brand }>{ brand }</option>) };
     </select>
 
     <p>BY STYLE</p>
-    <select onChange={ () => { filterTypes(searchedProducts) } }>
-      <option value="">--Choose a style--</option>
+    <select onChange={ (e) => { filterMenu(searchedProducts, onSelectOption, e) } }>
+      <option value="types">--Choose a style--</option>
       { types.map(type => <option value={ type }>{ type }</option>) };
     </select>
 
@@ -22,26 +22,25 @@ const FilterMenu = ({ searchedProducts, onSelectOption }) => (
   </div>
 );
 
-const filterBrands = (searchedProducts, onSelectOption, e) => {
-  const {value} = e.target;
-  if (value.length == 1) {
+const filterMenu = (searchedProducts, onSelectOption, e) => {
+  console.log(searchedProducts);
+  console.log(products);
+  searchedProducts = products;
+  const { value } = e.target;
+  if (value === "brands" || value === "types") {
     onSelectOption(products)
     return;
   }
-  const filteredByBrand = searchedProducts.filter(
-    ({ brand }) => brand === value
+  const filteredByMenu = searchedProducts.filter(
+    ({ brand, type }) => e.target.options[0].value === "brands" ? brand === value : type === value
   )
-  onSelectOption(filteredByBrand);
-};
-
-const filterTypes = (searchedProducts) => {
-
+  onSelectOption(filteredByMenu);
 };
 
 const stateFilterMenu = ({ searchedProducts }) => ({ searchedProducts });
 
 const dispatchFilterMenu = dispatch => ({
-  onSelectOption: filteredByBrand => dispatch(changeProductContainer(filteredByBrand)),
+  onSelectOption: filteredByMenu => dispatch(changeProductContainer(filteredByMenu)),
 });
 
 export default connect(stateFilterMenu, dispatchFilterMenu)(FilterMenu);

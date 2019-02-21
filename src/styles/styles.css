@@ -27,7 +27,7 @@ flex-direction: column;
   background: #d3eafd;
   color: #4767e1;
   transition: 1s;
-  width: 170px;
+  width: 220px;
   font-size: 16px;
 }
 
@@ -92,7 +92,7 @@ flex-direction: column;
 }
 
 .searching-result {
-  width: 170px;
+  width: 220px;
   padding-left: 20px;
   padding-right: 70px;
   background-color: #ddeafc;

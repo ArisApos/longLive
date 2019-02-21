@@ -3,14 +3,14 @@ import { connect } from "react-redux";
 import { products, changeProductContainer, onKeyUp } from "../models";
 
 
-const Search = ({ onEnterClick, suggestedProducts, input, onKeyUpD }) => {
+const Search = ({ onEnterClick, suggestedProducts, input, filters, onKeyUpD }) => {
   return (
     <div className="center-search">
       <input
         type="text"
         placeholder="Search..."
         className="search-bar"
-        onKeyUp={e => handleInput(onEnterClick, onKeyUpD, e)}
+        onKeyUp={e => handleInput(onEnterClick, filters, onKeyUpD, e)}
       />
       { suggestedProducts.map(({ name, type, brand },i) => (
         <div key={i} className="searching-result">
@@ -30,11 +30,11 @@ const searchableProducts = products.map(({ name, type, brand }) => {
   return productKeys;
 });
 
-const handleInput = (onEnterClick, onKeyUpD, event) => {
+const handleInput = (onEnterClick, filters, onKeyUpD, event) => {
   const searchInput = event.target.value.toLowerCase().split(" ");
   if (!event.target.value.length) {
     onEnterClick(products);
-    onKeyUpD({ suggestedProducts: [], input: [] });
+    onKeyUpD({ suggestedProducts: [], input: [], filter: [{type:"Downhill"}] });
     return;
   } else {
     const filtered = products.filter((product, i) =>
@@ -45,14 +45,20 @@ const handleInput = (onEnterClick, onKeyUpD, event) => {
         );
       })
     );
-    onKeyUpD({ suggestedProducts: filtered, input: searchInput} );
+     const extraFilter = filtered.filter(
+       ({ type, brand }) => {
+         return Object.entries(filters[0])[0][0] === "type" && type === Object.entries(filters[0])[0][1]
+       }
+     )
+    onKeyUpD({ suggestedProducts: filtered, input: searchInput, filters: [{type:"Downhill"}]} );
     if (event.key === "Enter") onEnterClick(filtered);
   }
 };
 
-const stateSearch = ({ suggestedProductsAndInput }) => ({
-  suggestedProducts: suggestedProductsAndInput.suggestedProducts,
-  input: suggestedProductsAndInput.input
+const stateSearch = ({ suggestedProducts }) => ({
+  suggestedProducts: suggestedProducts.suggestedProducts,
+  input: suggestedProducts.input,
+  filters: suggestedProducts.filters
 });
 
 const dispatchSearch = dispatch => ({

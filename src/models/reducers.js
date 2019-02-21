@@ -9,7 +9,7 @@ export const searchedProducts = (searchedProducts = products, action) => {
   }
 };
 
-export const suggestedProductsAndInput = (suggestedProductsAndInput = {suggestedProducts:[],input:[]}, action) => {
+export const suggestedProducts = (suggestedProductsAndInput = {suggestedProducts: [],input: [], filters: [{type:"Downhill"},{brand:"Arbor"}]}, action) => {
   switch (action.type) {
     case onKeyUp.type:
       return action.payload;

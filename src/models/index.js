@@ -1,5 +1,5 @@
 import { changeProductContainer, onKeyUp } from './actions'
-import { searchedProducts, suggestedProductsAndInput } from './reducers'
+import { searchedProducts, suggestedProducts } from './reducers'
 import { products, brands, types } from './data'
 
 export {
@@ -7,7 +7,7 @@ export {
   onKeyUp,
   products,
   searchedProducts,
-  suggestedProductsAndInput,
+  suggestedProducts,
   brands,
   types
 }
