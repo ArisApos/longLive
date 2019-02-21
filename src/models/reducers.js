@@ -1,8 +1,8 @@
-import { enterPressed, onKeyUp, products } from './'
+import { changeProductContainer, onKeyUp, products } from './'
 
 export const searchedProducts = (searchedProducts = products, action) => {
   switch(action.type) {
-     case enterPressed.type:
+     case changeProductContainer.type:
        return action.payload;
     default:
       return searchedProducts;

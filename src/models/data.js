@@ -87,5 +87,14 @@ const data = [
   }
 ];
 
+
+const brands = ["Sector 9", "Arbor", "Roxy", "Madrid", "Naked"];
+const types = ["Downhill", "Pintail", "Fishtail"];
+
 const products = _.shuffle(data);
-export default products;
+
+export {
+  products,
+  brands,
+  types
+}

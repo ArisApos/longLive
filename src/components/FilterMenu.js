@@ -1,38 +1,47 @@
 import React from 'react'
 import { connect } from "react-redux";
+import { brands, types, changeProductContainer, products } from "../models";
 
-const FilterMenu = ({ suggestedProducts }) => (
+const FilterMenu = ({ searchedProducts, onSelectOption }) => (
   <div className="side-menu">
     <h4 className="side-menu--title">SHOP:</h4>
 
     <p>BY BRAND</p>
-    <select onChange={ () => { filterBrand() } }>
-      <option value="">--Choose a brand--</option>
-      <option value="Sector 9">Sector 9</option>
-      <option value="Arbor">Arbor</option>
-      <option value="SeRoxy">Roxy</option>
-      <option value="Madrid">Madrid</option>
-      <option value="Naked">Naked</option>
+    <select onChange={ (e) => { filterBrands(searchedProducts, onSelectOption, e) } }>
+    <option value=" ">--Choose a brand--</option>
+      { brands.map(brand => <option value={ brand }>{ brand }</option>) };
     </select>
 
     <p>BY STYLE</p>
-    <select>
+    <select onChange={ () => { filterTypes(searchedProducts) } }>
       <option value="">--Choose a style--</option>
-      <option value="Downhill">Downhill</option>
-      <option value="Pintail">Pintail</option>
-      <option value="FishTail">FishTail</option>
+      { types.map(type => <option value={ type }>{ type }</option>) };
     </select>
 
     <p>BY PRICE</p>
   </div>
 );
 
-const filterBrand = () => {
+const filterBrands = (searchedProducts, onSelectOption, e) => {
+  const {value} = e.target;
+  if (value.length == 1) {
+    onSelectOption(products)
+    return;
+  }
+  const filteredByBrand = searchedProducts.filter(
+    ({ brand }) => brand === value
+  )
+  onSelectOption(filteredByBrand);
+};
+
+const filterTypes = (searchedProducts) => {
 
 };
 
-const stateFilterMenu = ({ suggestedProductsAndInput }) => ({
-  suggestedProducts: suggestedProductsAndInput.suggestedProducts,
+const stateFilterMenu = ({ searchedProducts }) => ({ searchedProducts });
+
+const dispatchFilterMenu = dispatch => ({
+  onSelectOption: filteredByBrand => dispatch(changeProductContainer(filteredByBrand)),
 });
 
-export default connect(stateFilterMenu, null)(FilterMenu);
+export default connect(stateFilterMenu, dispatchFilterMenu)(FilterMenu);

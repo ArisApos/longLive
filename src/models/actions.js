@@ -1,4 +1,4 @@
 import { Action } from '../libs';
 
-export const enterPressed = Action('ENTER_PRESSED');
+export const changeProductContainer = Action('CHANGE_PRODUCT_COINTAINER');
 export const onKeyUp = Action('KEY_UP');

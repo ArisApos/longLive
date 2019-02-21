@@ -1,11 +1,13 @@
-import { enterPressed, onKeyUp } from './actions'
+import { changeProductContainer, onKeyUp } from './actions'
 import { searchedProducts, suggestedProductsAndInput } from './reducers'
-import products from './data'
+import { products, brands, types } from './data'
 
 export {
-  enterPressed,
+  changeProductContainer,
   onKeyUp,
   products,
   searchedProducts,
-  suggestedProductsAndInput
+  suggestedProductsAndInput,
+  brands,
+  types
 }

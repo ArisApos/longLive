@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import { products, enterPressed, onKeyUp } from "../models";
+import { products, changeProductContainer, onKeyUp } from "../models";
 
 
 const Search = ({ onEnterClick, suggestedProducts, input, onKeyUpD }) => {
@@ -56,7 +56,7 @@ const stateSearch = ({ suggestedProductsAndInput }) => ({
 });
 
 const dispatchSearch = dispatch => ({
-  onEnterClick: filtered => dispatch(enterPressed(filtered)),
+  onEnterClick: filtered => dispatch(changeProductContainer(filtered)),
   onKeyUpD: (filteredAndInput) => dispatch(onKeyUp(filteredAndInput)),
 });
 
