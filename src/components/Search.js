@@ -34,7 +34,7 @@ const handleInput = (onEnterClick, filters, onKeyUpD, event) => {
   const searchInput = event.target.value.toLowerCase().split(" ");
   if (!event.target.value.length) {
     onEnterClick(products);
-    onKeyUpD({ suggestedProducts: [], input: [], filter: [{type:"Downhill"}] });
+    onKeyUpD({ suggestedProducts: [], input: [], filters });
     return;
   } else {
     const filtered = products.filter((product, i) =>
@@ -45,15 +45,16 @@ const handleInput = (onEnterClick, filters, onKeyUpD, event) => {
         );
       })
     );
-     const extraFilter = filtered.filter(
-       ({ type, brand }) => {
-         return Object.entries(filters[0])[0][0] === "type" && type === Object.entries(filters[0])[0][1]
-       }
-     )
-    onKeyUpD({ suggestedProducts: filtered, input: searchInput, filters: [{type:"Downhill"}]} );
-    if (event.key === "Enter") onEnterClick(filtered);
+    const filteredByFilters = filtering(filters, filtered)
+    onKeyUpD({ suggestedProducts: filteredByFilters, input: searchInput, filters });
+    if (event.key === "Enter") onEnterClick(filteredByFilters);
   }
 };
+const filtering = (filters,data) => filters.reduce((acc, filter) =>{
+   const longTypo = Object.entries(filter)[0][0]
+   const longValue = Object.entries(filter)[0][1]
+   return  acc.filter( ({type, brand})=>longTypo === 'type' ? type === longValue : brand === longValue );
+}, data)
 
 const stateSearch = ({ suggestedProducts }) => ({
   suggestedProducts: suggestedProducts.suggestedProducts,

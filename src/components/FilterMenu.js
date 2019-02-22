@@ -23,8 +23,6 @@ const FilterMenu = ({ searchedProducts, onSelectOption }) => (
 );
 
 const filterMenu = (searchedProducts, onSelectOption, e) => {
-  console.log(searchedProducts);
-  console.log(products);
   searchedProducts = products;
   const { value } = e.target;
   if (value === "brands" || value === "types") {
