@@ -88,13 +88,24 @@ const data = [
 ];
 
 
-const brands = ["Sector 9", "Arbor", "Roxy", "Madrid", "Naked"];
-const types = ["Downhill", "Pintail", "Fishtail"];
+const { typesAll, brandsAll, pricesAll } = data.reduce(
+  (acc, { type, brand, price }) => ({
+    typesAll: [...acc.typesAll, type],
+    brandsAll: [...acc.brandsAll, brand],
+    pricesAll: [...acc.pricesAll, price]
+  }),
+  { typesAll: [], brandsAll: [], pricesAll: [] }
+);
+
+const types = _.uniq(typesAll);
+const brands = _.uniq(brandsAll);
+const prices = _.uniq(pricesAll);
 
 const products = _.shuffle(data);
 
 export {
   products,
   brands,
-  types
+  types,
+  prices
 }
