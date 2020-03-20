@@ -3,12 +3,13 @@ import { connect } from 'react-redux';
 import { Search, Product, FilterMenu } from './'
 
 const Home = ({ searchedProducts }) => (
-  <div className="body-content">
-    <img src="../images/logo.png" className="logo"/>
+  <div className="homePage">
+    <nav className='header'>
+     <img src="../images/logo.png" className="logo"/>
+    </nav>
     <Search />
     <div className="collection">
       <FilterMenu />
-      <h1 className="heading">Products: </h1>
       <div className="product-container">
         <ul className="product-list">{ listItems(searchedProducts) }</ul>
       </div>

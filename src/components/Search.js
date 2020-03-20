@@ -32,6 +32,7 @@ const searchableProducts = products.map(({ name, type, brand }) => {
 
 const handleInput = (onEnterClick, filters, onKeyUpD, event) => {
   const searchInput = event.target.value.toLowerCase().split(" ");
+  console.log(searchInput)
   if (!event.target.value.length) {
     onEnterClick(products);
     onKeyUpD({ suggestedProducts: [], input: [], filters });
