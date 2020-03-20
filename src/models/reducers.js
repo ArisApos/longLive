@@ -1,6 +1,6 @@
 import { changeProductContainer, onKeyUp, products } from './'
 
-export const searchedProducts = (searchedProducts = products, action) => {
+const searchedProducts = (searchedProducts = products, action) => {
   switch(action.type) {
      case changeProductContainer.type:
        return action.payload;
@@ -9,7 +9,7 @@ export const searchedProducts = (searchedProducts = products, action) => {
   }
 };
 
-export const suggestedProducts = (suggestedProductsAndInput = {suggestedProducts: [],input: [], filters: [{type:"Pintail"},{brand:"Arbor"}]}, action) => {
+const suggestedProducts = (suggestedProductsAndInput = {suggestedProducts: [],input: [], filters: [{type:"Pintail"},{brand:"Arbor"}]}, action) => {
   switch (action.type) {
     case onKeyUp.type:
       return action.payload;
@@ -17,3 +17,5 @@ export const suggestedProducts = (suggestedProductsAndInput = {suggestedProducts
       return suggestedProductsAndInput;
     }
 };
+
+export { searchedProducts, suggestedProducts };
