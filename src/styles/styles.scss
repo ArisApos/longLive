@@ -1,9 +1,21 @@
+//Global variables
+$headerHeight: 50px;
+$mainColor: #1976d2;
+
+::-webkit-scrollbar-button {
+  display: none;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #babac0;
+  border-radius: 12px;
+}
+::-webkit-scrollbar {
+  width: 8px;
+}
+
 .center-text {
   text-align: center;
 }
-
-//Global variables
-$headerHeight: 50px;
 
 body {
   margin: 0;
@@ -58,6 +70,12 @@ body {
   .mainOptions {
     background: #e6f4ff;
     width: 35%;
+    .container {
+      padding: 0 15px;
+      .totalProducts {
+        color: $mainColor;
+      }
+    }  
   }
   .product-container {
     width: 65%;

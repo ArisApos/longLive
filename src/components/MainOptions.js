@@ -3,8 +3,9 @@ import { connect } from "react-redux";
 import { brands, types, changeProductContainer, products } from "../models";
 
 const MainOptions = ({ searchedProducts, onSelectOption }) => (
-  <div className="mainOptions">
-
+  <aside className="mainOptions">
+   <div className="container">
+    <section className="totalProducts">{products.length} total products</section>
     <p>BY BRAND</p>
     <select onChange={ (e) => { filterMenu(searchedProducts, onSelectOption, e) } }>
     <option value="brands">--Choose a brand--</option>
@@ -16,9 +17,8 @@ const MainOptions = ({ searchedProducts, onSelectOption }) => (
       <option value="types">--Choose a style--</option>
       { types.map(type => <option value={ type }>{ type }</option>) };
     </select>
-
-    <p>BY PRICE</p>
-  </div>
+   </div>
+  </aside>
 );
 
 const filterMenu = (searchedProducts, onSelectOption, e) => {
