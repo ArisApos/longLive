@@ -1,9 +1,9 @@
 import Search from './Search'
 import Product from './Product'
-import FilterMenu from './FilterMenu'
+import MainOptions from './MainOptions'
 
 export {
   Search,
   Product,
-  FilterMenu
+  MainOptions
 }

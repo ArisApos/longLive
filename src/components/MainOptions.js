@@ -2,9 +2,8 @@ import React from 'react'
 import { connect } from "react-redux";
 import { brands, types, changeProductContainer, products } from "../models";
 
-const FilterMenu = ({ searchedProducts, onSelectOption }) => (
-  <div className="side-menu">
-    <h4 className="side-menu--title">SHOP:</h4>
+const MainOptions = ({ searchedProducts, onSelectOption }) => (
+  <div className="mainOptions">
 
     <p>BY BRAND</p>
     <select onChange={ (e) => { filterMenu(searchedProducts, onSelectOption, e) } }>
@@ -41,4 +40,4 @@ const dispatchFilterMenu = dispatch => ({
   onSelectOption: filteredByMenu => dispatch(changeProductContainer(filteredByMenu)),
 });
 
-export default connect(stateFilterMenu, dispatchFilterMenu)(FilterMenu);
+export default connect(stateFilterMenu, dispatchFilterMenu)(MainOptions);

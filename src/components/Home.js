@@ -1,19 +1,20 @@
 import React from 'react'
 import { connect } from 'react-redux';
-import { Search, Product, FilterMenu } from './'
+import { Search, Product, MainOptions } from './'
 
 const Home = ({ searchedProducts }) => (
   <div className="homePage">
-    <nav className='header'>
-     <img src="../images/logo.png" className="logo"/>
-    </nav>
-    <Search />
-    <div className="collection">
-      <FilterMenu />
+    <header className="header">
+      <img src="../images/logo.png" alt='logo' className="logo" />
+      <nav />
+      <Search />
+    </header>
+    <main className="mainContent">
+      <MainOptions />
       <div className="product-container">
-        <ul className="product-list">{ listItems(searchedProducts) }</ul>
+        <ul className="product-list">{listItems(searchedProducts)}</ul>
       </div>
-    </div>
+    </main>
   </div>
 );
 

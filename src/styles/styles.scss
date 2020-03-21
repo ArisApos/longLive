@@ -1,55 +1,80 @@
-
-
-.center-search {
-display:flex;
-align-items: center;
-justify-content: center;
-flex-direction: column;
-}
-
 .center-text {
   text-align: center;
 }
 
-.search-bar {
-  margin-top: 1.5%;
-  padding: 8px 70px 8px 20px;
-  border: 2px solid #0069ff;
-  border-radius: 5px;
-  background: #d3eafd;
-  color: #4767e1;
-  transition: 1s;
-  width: 220px;
-  font-size: 16px;
-}
+//Global variables
+$headerHeight: 50px;
+
 body {
   margin: 0;
 .homePage {
-    font-family: fantasy;
+    font-family: cursive;
   .header {
     background: #1976d2;
-    height: 50px;
+    height: $headerHeight;
+    display: grid;
+    grid-template-columns: 20% 50% 30%;
   .logo {
-    width: 70px;
-    height: 60px;
-    transform: translateY(-6px);
+    width: 57px;
+    height: 47px;
+    margin-left: 18px;
+    margin-top: 2px;
+    background: #d3eafd;
+    border-radius: 16px;
+    }
+  .center-search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .search-bar {
+      padding: 8px 15px 8px 20px;
+      border: 2px solid #0069ff;
+      border-radius: 5px;
+      background: #d3eafd;
+      color: #4767e1;
+      transition: 1s;
+      width: 180px;
+      height: 13px;
+      font-size: 16px;
+      }
+    .searching-result {
+      width: 211px;
+      padding-left: 12px;
+      padding-right: 0px;
+      background-color: #ddeafc;
+      color: #6e789e;
+      transition: 1s;
+      position: absolute;
+      top: $headerHeight;
+    }
     }
   }
  }
-
 }
 
 
-.collection {
-  padding: 30px 40px;
+.mainContent {
   display: flex;
-}
+  .mainOptions {
+    background: #e6f4ff;
+    width: 35%;
+  }
+  .product-container {
+    width: 65%;
+    .product-list {
+      height: calc(100vh - #{$headerHeight});
+      overflow-y: scroll;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      .product {
 
-.side-menu {
-  display: inline-block;
-  margin-left: 2%;
-  padding-top: 95px;
-  min-width: 180px;
+      }
+    }
+  }
 }
 
 .side-menu--title {
@@ -68,29 +93,9 @@ body {
   content: "\f046";
 }
 
-.product-list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  list-style: none;
-  padding: 0;
-}
-
-.product {
-  width: 26%;
-}
 
 .center {
   display: block;
   margin-left: auto;
   margin-right: auto;
-}
-
-.searching-result {
-  width: 220px;
-  padding-left: 20px;
-  padding-right: 70px;
-  background-color: #ddeafc;
-  color: #6e789e;
-  transition: 1s;
 }
