@@ -2,11 +2,11 @@ import React from 'react'
 
 const Product = ({ name, type, brand, price, imageSrc }) => (
   <div className="center-text">
-    <h2>{ name }</h2>
-    <img src={ imageSrc } height="250" width="170" className="center"/>
-    <h4>Brand: { brand }</h4>
-    <h4>Style: { type }</h4>
-    <h4>Price: €{ price }.00</h4>
+    <h3>{ name }</h3>
+    <img src={ imageSrc } alt="img" height="250" width="170" className="center"/>
+    <div>Brand: { brand }</div>
+    <div>Style: { type }</div>
+    <div>Price: €{ price }.00</div>
   </div>
 );
 
