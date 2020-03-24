@@ -1,5 +1,8 @@
 import { changeProductContainer, onKeyUp, products } from './'
 
+
+
+
 const searchedProducts = (searchedProducts = products, action) => {
   switch(action.type) {
      case changeProductContainer.type:
@@ -9,7 +12,7 @@ const searchedProducts = (searchedProducts = products, action) => {
   }
 };
 
-const suggestedProducts = (suggestedProductsAndInput = {suggestedProducts: [],input: [], filters: [{type:"Pintail"},{brand:"Arbor"}]}, action) => {
+const suggestedProducts = (suggestedProductsAndInput = {suggestedProducts: [],input: [], filters: []}, action) => {
   switch (action.type) {
     case onKeyUp.type:
       return action.payload;
