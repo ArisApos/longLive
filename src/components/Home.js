@@ -5,7 +5,7 @@ import { Search, Product, MainOptions } from './'
 const Home = ({ searchedProducts }) => (
   <div className="homePage">
     <header className="header">
-      <img src="../images/logo.png" alt='logo' className="logo" />
+      <img src="./images/logo.png" alt='logo' className="logo" />
       <nav />
       <Search />
     </header>
