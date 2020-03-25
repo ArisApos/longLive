@@ -4,19 +4,19 @@ self.__precacheManifest = [
     "url": "/longLive/static/js/runtime~main.a40e1403.js"
   },
   {
-    "revision": "bcd67c6db46c0c2fa3d6",
-    "url": "/longLive/static/js/main.bcd67c6d.chunk.js"
+    "revision": "d19f31b729097d93293d",
+    "url": "/longLive/static/js/main.d19f31b7.chunk.js"
   },
   {
     "revision": "6c824eca1a59a56c7610",
     "url": "/longLive/static/js/2.6c824eca.chunk.js"
   },
   {
-    "revision": "bcd67c6db46c0c2fa3d6",
-    "url": "/longLive/static/css/main.e9e5784a.chunk.css"
+    "revision": "d19f31b729097d93293d",
+    "url": "/longLive/static/css/main.3b73388e.chunk.css"
   },
   {
-    "revision": "7b61d4c4663965dbe18f06e27e0418c0",
+    "revision": "694c3bdd5655211a6021d88c882f22ef",
     "url": "/longLive/index.html"
   }
 ];
