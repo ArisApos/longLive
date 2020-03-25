@@ -1,24 +1,39 @@
-import React from "react";
+import React, { useState } from "react";
 import { connect } from "react-redux";
 import { products, changeProductContainer, onKeyUp } from "../models";
 
 
 const Search = ({ onEnterClick, suggestedProducts, input, filters, onKeyUpD }) => {
+  const [searchingResultsVisible, setSearchingResultsVisible] = useState(true)
+  const totalReults = suggestedProducts.length > 0 ? <div className="totalResults">Total results: {suggestedProducts.length} </div> : null;
+  const searchingResults =
+    suggestedProducts.length > 0 && searchingResultsVisible ? (
+      <div className="searchingResults">
+        {suggestedProducts.map(({ name, type, brand }, i) => (
+          <div key={i} className="searchingResu;lt">
+            {` ${name}`}
+            {` ${type}`}
+            {` ${brand}`}
+          </div>
+        ))}
+        {totalReults}
+      </div>
+    ) : null;
   return (
     <div className="center-search">
       <input
         type="text"
         placeholder="Search..."
         className="search-bar"
-        onKeyUp={e => handleInput(onEnterClick, filters, onKeyUpD, e)}
+        onKeyUp={e => {
+          if (e.key === "Enter") {
+            setSearchingResultsVisible(false);
+          }else if (!searchingResultsVisible) setSearchingResultsVisible(true);
+          
+          handleInput(onEnterClick, filters, onKeyUpD, e);
+        } }
       />
-      { suggestedProducts.map(({ name, type, brand },i) => (
-        <div key={i} className="searching-result">
-          {` ${name}`}
-          {` ${type}`}
-          {` ${brand}`}
-        </div>
-      ))}
+      {searchingResults}
     </div>
   );
 };
@@ -31,23 +46,21 @@ const searchableProducts = products.map(({ name, type, brand }) => {
 });
 
 const handleInput = (onEnterClick, filters, onKeyUpD, event) => {
-  const searchInput = event.target.value.toLowerCase().split(" ");
-  console.log(searchInput)
+  const searchInputs = event.target.value.toLowerCase().split(" ");
   if (!event.target.value.length) {
     onEnterClick(products);
     onKeyUpD({ suggestedProducts: [], input: [], filters });
     return;
   } else {
     const filtered = products.filter((product, i) =>
-      searchableProducts[i].find(key => {
+      searchableProducts[i].find(serchableProduct => {
         return (
-          searchInput.find(inputWord => inputWord === key) ||
-          key.includes(searchInput)
+          searchInputs.find(inputWord => inputWord === serchableProduct) || serchableProduct.includes(searchInputs)
         );
       })
     );
     const filteredByFilters = filtering(filters, filtered)
-    onKeyUpD({ suggestedProducts: filteredByFilters, input: searchInput, filters });
+    onKeyUpD({ suggestedProducts: filteredByFilters, input: searchInputs, filters });
     if (event.key === "Enter") onEnterClick(filteredByFilters);
   }
 };

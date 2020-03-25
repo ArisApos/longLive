@@ -49,16 +49,22 @@ body {
       height: 13px;
       font-size: 16px;
       }
-    .searching-result {
-      width: 211px;
-      padding-left: 12px;
-      padding-right: 0px;
-      background-color: #ddeafc;
-      color: #6e789e;
-      transition: 1s;
-      position: absolute;
-      top: $headerHeight;
-    }
+    .searchingResults {
+        width: 211px;
+        padding-left: 12px;
+        padding-right: 0px;
+        background-color: #ddeafc;
+        color: #6e789e;
+        transition: 1s;
+        position: absolute;
+        font-size: 12px;
+        top: $headerHeight;
+      .totalResults {
+        font-weight: bold;
+        margin-top: 6px;
+        border-top: 1px solid $mainColor;
+      }
+     }
     }
   }
  }
