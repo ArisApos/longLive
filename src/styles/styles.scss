@@ -13,9 +13,6 @@ $mainColor: #1976d2;
   width: 8px;
 }
 
-.center-text {
-  text-align: center;
-}
 
 body {
   margin: 0;
@@ -96,6 +93,13 @@ body {
       margin: 0;
       .product {
         margin: 5px;
+        .productName {
+          font-size: 19px;
+        }
+        .center-text {
+          text-align: center;
+          font-size: 13px;
+        }
       }
     }
   }
