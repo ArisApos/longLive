@@ -1,13 +1,13 @@
 {
   "main.css": "/longLive/static/css/main.9d7659b8.chunk.css",
-  "main.js": "/longLive/static/js/main.f879c0fe.chunk.js",
-  "main.js.map": "/longLive/static/js/main.f879c0fe.chunk.js.map",
+  "main.js": "/longLive/static/js/main.f0759e08.chunk.js",
+  "main.js.map": "/longLive/static/js/main.f0759e08.chunk.js.map",
   "runtime~main.js": "/longLive/static/js/runtime~main.a40e1403.js",
   "runtime~main.js.map": "/longLive/static/js/runtime~main.a40e1403.js.map",
   "static/js/2.4f391d77.chunk.js": "/longLive/static/js/2.4f391d77.chunk.js",
   "static/js/2.4f391d77.chunk.js.map": "/longLive/static/js/2.4f391d77.chunk.js.map",
   "index.html": "/longLive/index.html",
-  "precache-manifest.ab14e5cdff5976773dd4df17b78cb8bd.js": "/longLive/precache-manifest.ab14e5cdff5976773dd4df17b78cb8bd.js",
+  "precache-manifest.7a6e6333ea36184fd0ec266d6e0252cd.js": "/longLive/precache-manifest.7a6e6333ea36184fd0ec266d6e0252cd.js",
   "service-worker.js": "/longLive/service-worker.js",
   "static/css/main.9d7659b8.chunk.css.map": "/longLive/static/css/main.9d7659b8.chunk.css.map"
 }
